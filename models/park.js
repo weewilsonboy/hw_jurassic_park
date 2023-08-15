@@ -1,0 +1,32 @@
+class Park{
+    constructor(name, ticketPrice, dinoList=[]){
+        this.name=name
+        this.ticketPrice=ticketPrice
+        this.dinoList=dinoList
+    }
+
+    addDino(newDino){
+        this.dinoList.push(newDino)
+    }
+
+    removeDino(removedDino){
+        this.dinoList.splice(this.dinoList.indexOf(removedDino),1)
+    }
+
+    popular(){
+        let mostPopularDino = this.dinoList[0];
+        for (let dino of this.dinoList){
+            if(dino.guestsAttractedPerDay > mostPopularDino.guestsAttractedPerDay){
+                mostPopularDino = dino;
+            }
+        }
+        return mostPopularDino;
+    }
+
+    
+
+
+
+}
+
+module.exports = Park;
