@@ -53,6 +53,14 @@ class Park {
     totalYearlyRevenue() {
         return this.calculateTotalYearlyVisitors() * this.ticketPrice;
     }
+
+    removeSpecies(givenSpecies) {
+        const keepSpecies = function (givenDino) {
+            return givenDino.species != givenSpecies;
+        };
+        let remodList = this.dinoList.filter(keepSpecies);
+        this.dinoList = remodList;
+    }
 }
 
 module.exports = Park;

@@ -1,6 +1,7 @@
 const assert = require("assert");
 const Park = require("../models/park.js");
 const Dinosaur = require("../models/dinosaur.js");
+const { log } = require("console");
 
 describe("Park", function () {
     beforeEach(function () {
@@ -75,5 +76,12 @@ describe("Park", function () {
     it("should be able to calculate total revenue for one year", function () {
         const actual = park.totalYearlyRevenue();
         assert.strictEqual(actual, 40177500);
+    });
+
+    it("should be able to remove all dinos of a particular species", function () {
+        park.addDino(dinosaur6);
+        park.removeSpecies("T-Rex");
+        actual = park.dinoList;
+        assert.deepStrictEqual(actual, [dinosaur2, dinosaur3, dinosaur4]);
     });
 });
