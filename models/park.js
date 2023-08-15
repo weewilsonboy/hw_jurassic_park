@@ -65,14 +65,12 @@ class Park {
     dietCheck() {
         let dietObject = {};
         for (let dino of this.dinoList) {
-            console.log(dino.diet);
             if (dietObject[dino.diet]) {
                 dietObject[dino.diet] += 1;
             } else {
                 dietObject[dino.diet] = 1;
             }
         }
-        console.log(dietObject);
         return dietObject;
     }
 }
