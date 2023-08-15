@@ -1,3 +1,5 @@
+const daysPerYear = 365.25;
+
 class Park {
   constructor(name, ticketPrice, dinoList = []) {
     this.name = name;
@@ -39,6 +41,10 @@ class Park {
       total += dino.guestsAttractedPerDay;
     }
     return total;
+  }
+
+  calculateTotalYearlyVisitors() {
+    return this.calculateTotalDailyVisitors() * daysPerYear;
   }
 }
 
