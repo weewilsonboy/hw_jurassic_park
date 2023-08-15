@@ -84,4 +84,16 @@ describe("Park", function () {
         actual = park.dinoList;
         assert.deepStrictEqual(actual, [dinosaur2, dinosaur3, dinosaur4]);
     });
+
+    it("should be able to provide an object with all diet types of dinosaurs in the park, and how many of each", function () {
+        let dinosaur7 = new Dinosaur("Protarcheopteryx", "omnivore", 1000);
+        park.addDino(dinosaur7);
+        actual = park.dietCheck();
+
+        assert.deepStrictEqual(actual, {
+            carnivore: 2,
+            herbivore: 2,
+            omnivore: 1,
+        });
+    });
 });
