@@ -23,7 +23,15 @@ class Park{
         return mostPopularDino;
     }
 
-    
+    findSpecies(givenSpecies){
+        let foundDinos = [];
+        for (let dino of this.dinoList){
+            if (dino.species === givenSpecies){
+                foundDinos.push(dino);
+            }
+        }
+        return foundDinos;
+    }
 
 
 
